@@ -13,21 +13,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <!--%
-        String dia = Integer.toString(jdt.getCalendar().get(Calendar.DAY_OF_MONTH));
-        String mes = Integer.toString(jdt.getCalendar().get(Calendar.MONTH) + 1);
-        String year = Integer.toString(jdt.getCalendar().get(Calendar.YEAR));
-        String fecha = (dia + "-" + mes + "-" + year);
-        %>
-        txtFecha.setText(fecha);
-        -->
-        Calendar calendar = new GregorianCalendar();
-
-            int year       = calendar.get(Calendar.YEAR);
-            int month      = calendar.get(Calendar.MONTH); 
-            int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH); 
-            
-        <input type="datetime" name="fecha">
+        <h1>Hello World!</h1
+        
+        <!--<input type="datetime" name="fecha">-->
     </body>
 </html>
