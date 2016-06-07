@@ -19,3 +19,20 @@ MariaDB [prueba03]> create table Albumes(
     -> autor_id int(10),
     -> creado_por int(10));
 Query OK, 0 rows affected (0.02 sec)
+
+MariaDB [prueba03]> create table Autores(
+    -> autor_id int(3) primary key not null auto_increment,
+    -> nombre varchar(30),
+    -> apepat varchar(30),
+    -> apemat varchar(30),
+    -> fecha_nacimiento varchar(20),
+    -> estado varchar (10),
+    -> nacionalidad_id int(3)
+    -> );
+
+
+    MariaDB [prueba03]> create table Nacionalidades(
+    -> nacionalidad_id int(3)primary key not null auto_increment,
+    -> nombre varchar(30),
+    -> estado varchar(10)
+    -> );
