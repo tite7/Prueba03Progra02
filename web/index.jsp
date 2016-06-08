@@ -15,6 +15,5 @@
     <body>
         <h1>Hello World!</h1
         
-        <!--<input type="datetime" name="fecha">-->
     </body>
 </html>
