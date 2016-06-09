@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Servlet;
 
 import java.io.IOException;
@@ -11,12 +7,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Negocio.Album;
 
 /**
  *
  * @author Administrador
  */
 public class ServletAlbum extends HttpServlet {
+
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,21 +30,50 @@ public class ServletAlbum extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            //crear
-            if(request.getParameter("crear")!=null){
+            if(request.getParameter("eliminar")!=null){
+               //RECIBO PARAMETRO LO CONVIERTO EN ENTERO
+               int id=Integer.parseInt(request.getParameter("eliminar"));
+               out.println("Eliminar ID:"+id);
+               //CREO UN OBJETO USARIO
+               Album alb=new Album();
+               //ASIGNO LA ID
+               alb.setAlbum_id(id);
+               //ELIMINO USAURIO
+               alb.delete();
+               //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
+               response.sendRedirect("index.jsp");
+               
+           }else if(request.getParameter("guardar")!=null){
+               String titulo=request.getParameter("titulo");
+               String fecha_creacion=request.getParameter("fecha_creacion");
+               int cantidad_canciones=Integer.parseInt(request.getParameter("cantidad_canciones"));
+               int Autor_id=Integer.parseInt(request.getParameter("fecha_creacion"));
+               int Creado_por=Integer.parseInt(request.getParameter("creado_por"));
+               Album alb=new Album();
+               alb.setTitulo("titulo");
+               alb.setFecha_creacion("Fecha_creacion");
+               alb.setCantidad_canciones(cantidad_canciones);
+               alb.setAutor_id(Autor_id);
+               alb.setCreado_por(Creado_por);
+               alb.save();
+               //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
+               response.sendRedirect("index.jsp");
+               
+           }else if(request.getParameter("editar")!=null){
+               int album_id=Integer.parseInt(request.getParameter("album_id"));
+               String titulo=request.getParameter("titulo");
+               String fecha_creacion=request.getParameter("Fecha_creacion");
+               int Cantidad_canciones=Integer.parseInt(request.getParameter("Cantidad_canciones"));
+               Album alb=new Album();
+               alb.setAlbum_id(album_id);
+               alb.setTitulo("titulo");
+               alb.setFecha_creacion("Fecha_creacion");
+               alb.setCantidad_canciones(Cantidad_canciones);
+               alb.update();
+               response.sendRedirect("index.jsp");
+               
+           }
             
-        }
-            //Actualizar
-            else if(request.getParameter("actualizar")!=null){}
-            
-            //Eliminar(cambiar a pasivo)
-            else if(request.getParameter("eliminar")!=null){}
-            
-            //Buscar
-            else if(request.getParameter("buscar")!=null){}
-            
-            //Mostrar
-            else if(request.getParameter("mostrar")!=null){}
         }
     }
 
