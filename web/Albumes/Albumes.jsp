@@ -63,6 +63,8 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
+        <a href="guardar.jsp" class="btn btn-primary">AGREGAR ALBUM</a>
+          <br>
           <table class="table table-hover">
                 <thead>
                 <th>ID</th>
@@ -71,6 +73,7 @@
                 <th>CANTIDAD CANCIONES</th>
                 <th>AUTOR ID</th>
                 <th>CREADO POR</th>
+                <th>ACCIONES</th>
                 </thead>
                 <tbody>
                     <%
@@ -84,6 +87,8 @@
                            out.println("<td>"+con.getResultado().getString("catidad_canciones")+"</td>");
                            out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("creado_por")+"</td>");
+                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("album_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
+                           out.println("<td>"+"<a href='../ServletAlbum?eliminar="+con.getResultado().getString("album_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
                         out.println("</tr>");
                        }
                     %>

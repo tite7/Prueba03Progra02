@@ -63,6 +63,8 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
+        <a href="guardar.jsp" class="btn btn-primary">AGREGAR AUTOR</a>
+          <br>
           <table class="table table-hover">
                 <thead>
                 <th>ID</th>
@@ -72,6 +74,7 @@
                 <th>FECHA NACIMIENTO</th>
                 <th>NACIONALIDAD ID</th>
                 <th>ESTADO</th>
+                <th>ACCIONES</th>
                 </thead>
                 <tbody>
                     <%
@@ -86,6 +89,8 @@
                            out.println("<td>"+con.getResultado().getString("fecha_nacimiento")+"</td>");
                            out.println("<td>"+con.getResultado().getString("nacionalidad_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("estado")+"</td>");
+                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("autor_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
+                           out.println("<td>"+"<a href='../ServletAutor?eliminar="+con.getResultado().getString("autor_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
                         out.println("</tr>");
                        }
                     %>
