@@ -13,5 +13,21 @@
     </head>
     <body>
         <h1>EDITAR AUTOR</h1>
+        <form method="post" action="../ServletAlbum.java">
+            <table border="3">
+                <tr>
+                    <td>ID</td>
+                    <td><input type="text" name="album_id" placeholder="Id Album"></td>
+                </tr>
+                <tr>
+                    <td>TITULO</td>
+                    <td><input type="text" name="titulo" placeholder="Titulo"></td>
+                </tr>
+                <tr>
+                    <td>CANTIDAD CANCIONES</td>
+                    <td><input type="text" name="cantidad_canciones" placeholder="Cantidad de Canciones"></td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>

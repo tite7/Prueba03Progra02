@@ -41,36 +41,36 @@ public class ServletAlbum extends HttpServlet {
                //ELIMINO USAURIO
                alb.delete();
                //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
-               response.sendRedirect("index.jsp");
+               response.sendRedirect("index2.jsp");
                
            }else if(request.getParameter("guardar")!=null){
                String titulo=request.getParameter("titulo");
                String fecha_creacion=request.getParameter("fecha_creacion");
                int cantidad_canciones=Integer.parseInt(request.getParameter("cantidad_canciones"));
-               int Autor_id=Integer.parseInt(request.getParameter("fecha_creacion"));
-               int Creado_por=Integer.parseInt(request.getParameter("creado_por"));
+               int autor_id=Integer.parseInt(request.getParameter("fecha_creacion"));
+               int creado_por=Integer.parseInt(request.getParameter("creado_por"));
                Album alb=new Album();
-               alb.setTitulo("titulo");
-               alb.setFecha_creacion("Fecha_creacion");
+               alb.setTitulo(titulo);
+               alb.setFecha_creacion(fecha_creacion);
                alb.setCantidad_canciones(cantidad_canciones);
-               alb.setAutor_id(Autor_id);
-               alb.setCreado_por(Creado_por);
+               alb.setAutor_id(autor_id);
+               alb.setCreado_por(creado_por);
                alb.save();
                //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
-               response.sendRedirect("index.jsp");
+               response.sendRedirect("index2.jsp");
                
            }else if(request.getParameter("editar")!=null){
                int album_id=Integer.parseInt(request.getParameter("album_id"));
                String titulo=request.getParameter("titulo");
-               String fecha_creacion=request.getParameter("Fecha_creacion");
-               int Cantidad_canciones=Integer.parseInt(request.getParameter("Cantidad_canciones"));
+               String fecha_creacion=request.getParameter("fecha_creacion");
+               int cantidad_canciones=Integer.parseInt(request.getParameter("cantidad_canciones"));
                Album alb=new Album();
                alb.setAlbum_id(album_id);
-               alb.setTitulo("titulo");
-               alb.setFecha_creacion("Fecha_creacion");
-               alb.setCantidad_canciones(Cantidad_canciones);
+               alb.setTitulo(titulo);
+               alb.setFecha_creacion(fecha_creacion);
+               alb.setCantidad_canciones(cantidad_canciones);
                alb.update();
-               response.sendRedirect("index.jsp");
+               response.sendRedirect("index2.jsp");
                
            }
             

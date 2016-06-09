@@ -12,6 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+       <h1>GUARDAR NACIONALIDAD</h1>
+        <form method="post" action="../ServletNacionalidad.java">
+            <table border="3">
+                <tr>
+                    <td>NOMBRE</td>
+                    <td><input type="text" name="nombre" placeholder="Nombre"></td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>

@@ -12,6 +12,34 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>EDITAR AUTOR</h1>
+        <form method="post" action="../ServletAutor.java">
+            <table border="3">
+                <tr>
+                    <td>ID</td>
+                    <td><input type="text" name="autor_id" placeholder="Id Autor"></td>
+                </tr>
+                <tr>
+                    <td>NOMBRE</td>
+                    <td><input type="text" name="nombre" placeholder="Nombre"></td>
+                </tr>
+                <tr>
+                    <td>APEPAT</td>
+                    <td><input type="text" name="apepat" placeholder="Apellido Paterno"></td>
+                </tr>
+                <tr>
+                    <td>APEMAT</td>
+                    <td><input type="text" name="apemat" placeholder="Apellido Materno"></td>
+                </tr>
+                <tr>
+                    <td>FECHA NACIMIENTO</td>
+                    <td><input type="text" name="fecha_nacimiento" placeholder="Fecha de Nacimiento"></td>
+                </tr>
+                <tr>
+                    <td>NACIONALIDAD ID</td>
+                    <td><input type="text" name="nacionalidad_id" placeholder="Id Nacionalidad"></td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>
