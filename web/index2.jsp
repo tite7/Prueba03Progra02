@@ -1,3 +1,4 @@
+<%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +48,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
+              <li><a href="Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
               <li><a href="Albumes/Albumes.jsp">Albumes</a></li>
               <li><a href="Autores/Autores.jsp">Autores</a></li>
               <li><a href="Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
@@ -62,7 +63,28 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
-          Contenido de la Tabla Usuario y solo del Usuario!!!
+          <table class="table table-hover">
+                <thead>
+                <th>ID</th>
+                <th>USUARIO</th>
+                <th>FECHA NACIMIENTO</th>
+                <th>ESTADO</th>
+                </thead>
+                <tbody>
+                    <%
+                       Conexion con=new Conexion();
+                       con.setConsulta("select * from Usuarios where estado='activo' and usuario_id=1");
+                       while(con.getResultado().next()){
+                        out.println("<tr>");
+                           out.println("<td>"+con.getResultado().getString("usuario_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("usuario")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("fecha_nacimiento")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("estado")+"</td>");
+                        out.println("</tr>");
+                       }
+                    %>
+                </tbody>
+            </table>
           
       </div>
 

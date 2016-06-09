@@ -48,10 +48,10 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
+              <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
               <li><a href="../Albumes/Albumes.jsp">Albumes</a></li>
               <li><a href="../Autores/Autores.jsp">Autores</a></li>
-              <li><a href="Nacionalidades.jsp">Nacionalidades</a></li>
+              <li class="active"><a href="Nacionalidades.jsp">Nacionalidades</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
             <li><a href="../index.jsp">Cerrar Sesion</a></li>

@@ -48,9 +48,9 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
+              <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
               <li><a href="../Albumes/Albumes.jsp">Albumes</a></li>
-              <li><a href="Autores.jsp">Autores</a></li>
+              <li class="active"><a href="Autores.jsp">Autores</a></li>
               <li><a href="../Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
@@ -76,7 +76,7 @@
                 <tbody>
                     <%
                        Conexion con=new Conexion();
-                       con.setConsulta("select Autores.autor_id, Autores.nombre, Autores.apepat, Autores.apemat, Autores.fecha_nacimiento, Nacionalidad.nacionalidad_id, Autor.estado from Autores, Nacionalidades where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
+                       con.setConsulta("select Autores.autor_id, Autores.nombre, Autores.apepat, Autores.apemat, Autores.fecha_nacimiento, Nacionalidades.nacionalidad_id, Autores.estado from Autores, Nacionalidades where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");

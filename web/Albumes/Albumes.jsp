@@ -48,8 +48,8 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
-              <li><a href="Albumes.jsp">Albumes</a></li>
+              <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
+              <li class="active"><a href="Albumes.jsp">Albumes</a></li>
               <li><a href="../Autores/Autores.jsp">Autores</a></li>
               <li><a href="../Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
             </ul>
@@ -75,13 +75,13 @@
                 <tbody>
                     <%
                        Conexion con=new Conexion();
-                       con.setConsulta("select Albumes.album_id, Album.titulo, Album.estado, Album.cantidad_canciones, Album.autor_id, Album.creado_por from Album where Album.autor_id=Autor.autor_id, Album.creado_por=Usuarios.usuario_id and Album.estado='activo'");
+                       con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.catidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, Autores where Albumes.autor_id=Autores.autor_id");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("album_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("titulo")+"</td>");
                            out.println("<td>"+con.getResultado().getString("estado")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("cantidad_canciones")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("catidad_canciones")+"</td>");
                            out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("creado_por")+"</td>");
                         out.println("</tr>");

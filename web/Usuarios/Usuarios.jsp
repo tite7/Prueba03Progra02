@@ -73,7 +73,7 @@
                 <tbody>
                     <%
                        Conexion con=new Conexion();
-                       con.setConsulta("select Usuarios.usuario_id,Usuarios.usuario,Usuarios.fecha_nacimiento from Usuarios where estado='activo'");
+                       con.setConsulta("select * from Usuarios where estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("usuario_id")+"</td>");
