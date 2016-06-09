@@ -31,16 +31,21 @@ public class ServletNacionalidad extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletNacionalidad</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletNacionalidad at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            //crear
+            if(request.getParameter("crear")!=null){
+            
+        }
+            //Actualizar
+            else if(request.getParameter("actualizar")!=null){}
+            
+            //Eliminar(cambiar a pasivo)
+            else if(request.getParameter("eliminar")!=null){}
+            
+            //Buscar
+            else if(request.getParameter("buscar")!=null){}
+            
+            //Mostrar
+            else if(request.getParameter("mostrar")!=null){}
         }
     }
 
