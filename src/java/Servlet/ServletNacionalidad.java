@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Servlet;
 
 import java.io.IOException;
@@ -11,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Negocio.Nacionalidad;
 
 /**
  *
@@ -31,21 +28,36 @@ public class ServletNacionalidad extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            //crear
-            if(request.getParameter("crear")!=null){
             
-        }
-            //Actualizar
-            else if(request.getParameter("actualizar")!=null){}
-            
-            //Eliminar(cambiar a pasivo)
-            else if(request.getParameter("eliminar")!=null){}
-            
-            //Buscar
-            else if(request.getParameter("buscar")!=null){}
-            
-            //Mostrar
-            else if(request.getParameter("mostrar")!=null){}
+            if(request.getParameter("eliminar")!=null){
+               //RECIBO PARAMETRO LO CONVIERTO EN ENTERO
+               int id=Integer.parseInt(request.getParameter("eliminar"));
+               out.println("Eliminar ID:"+id);
+               //CREO UN OBJETO USARIO
+               Nacionalidad nac=new Nacionalidad();
+               //ASIGNO LA ID
+               nac.setNacionalidad_id(id);
+               //ELIMINO USAURIO
+               nac.delete();
+               //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
+               response.sendRedirect("index.jsp");
+               
+           }else if(request.getParameter("guardar")!=null){
+               String nombre=request.getParameter("nombre");
+               Nacionalidad nac=new Nacionalidad();
+               nac.setNombre("nombre");
+               nac.save();
+               //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
+               response.sendRedirect("index.jsp");
+               
+           }else if(request.getParameter("editar")!=null){
+               int nacionalidad_id=Integer.parseInt(request.getParameter("nacionalidad_id"));
+               String nombre=request.getParameter("nombre");
+               Nacionalidad nac=new Nacionalidad();
+               nac.setNombre("nombre");
+               nac.update();
+               response.sendRedirect("index.jsp");
+           }   
         }
     }
 

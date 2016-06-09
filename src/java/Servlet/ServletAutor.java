@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlet;
 
+import Negocio.Autor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,21 +27,54 @@ public class ServletAutor extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            //crear
-            if(request.getParameter("crear")!=null){
             
-        }
-            //Actualizar
-            else if(request.getParameter("actualizar")!=null){}
-            
-            //Eliminar(cambiar a pasivo)
-            else if(request.getParameter("eliminar")!=null){}
-            
-            //Buscar
-            else if(request.getParameter("buscar")!=null){}
-            
-            //Mostrar
-            else if(request.getParameter("mostrar")!=null){}
+            if(request.getParameter("eliminar")!=null){
+               //RECIBO PARAMETRO LO CONVIERTO EN ENTERO
+               int id=Integer.parseInt(request.getParameter("eliminar"));
+               out.println("Eliminar ID:"+id);
+               //CREO UN OBJETO USARIO
+               Autor aut=new Autor();
+               //ASIGNO LA ID
+               aut.setAutor_id(id);
+               //ELIMINO USAURIO
+               aut.delete();
+               //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
+               response.sendRedirect("index.jsp");
+               
+           }else if(request.getParameter("guardar")!=null){
+               String nombre=request.getParameter("nombre");
+               String apepat=request.getParameter("apepat");
+               String apemat=request.getParameter("apemat");
+               String fecha_nacimiento=request.getParameter("fecha_nacimiento");
+               int nacionalidad_id=Integer.parseInt(request.getParameter("nacionalidad_id"));               
+               Autor aut=new Autor();
+               aut.setNombre("nombre");
+               aut.setApepat("apepat");
+               aut.setApemat("apemat");
+               aut.setFecha_nacimiento("fecha_nacimiento");
+               aut.setNacionalidad_id(nacionalidad_id);
+               aut.save();
+               //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
+               response.sendRedirect("index.jsp");
+               
+           }else if(request.getParameter("editar")!=null){
+               int autor_id=Integer.parseInt(request.getParameter("autor_id"));
+               String nombre=request.getParameter("nombre");
+               String apepat=request.getParameter("apepat");
+               String apemat=request.getParameter("apemat");
+               String fecha_nacimiento=request.getParameter("Fecha_nacimiento");
+               int nacionalidad_id=Integer.parseInt(request.getParameter("nacionalidad_id"));
+               Autor aut=new Autor();
+               aut.setAutor_id(autor_id);
+               aut.setNombre("nombre");
+               aut.setApepat("apepat");
+               aut.setApemat("apemat");
+               aut.setFecha_nacimiento("fecha_nacimiento");
+               aut.setNacionalidad_id(nacionalidad_id);
+               aut.update();
+               response.sendRedirect("index.jsp");
+               
+           }
         }
     }
 
