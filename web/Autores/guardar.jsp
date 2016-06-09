@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>GUARDAR AUTOR</h1>
-        <form method="post" action="../ServletAutor">
+        <form method="POST" action="../ServletAutor">
             <table border="3">
                 <tr>
                     <td>NOMBRE</td>

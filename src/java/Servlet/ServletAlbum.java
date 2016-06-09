@@ -41,7 +41,7 @@ public class ServletAlbum extends HttpServlet {
                //ELIMINO USAURIO
                alb.delete();
                //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Albumes/Albumes.jsp");
                
            }else if(request.getParameter("guardar")!=null){
                String titulo=request.getParameter("titulo");
@@ -57,7 +57,7 @@ public class ServletAlbum extends HttpServlet {
                alb.setCreado_por(creado_por);
                alb.save();
                //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Albumes/Albumes.jsp");
                
            }else if(request.getParameter("editar")!=null){
                int album_id=Integer.parseInt(request.getParameter("album_id"));
@@ -70,7 +70,7 @@ public class ServletAlbum extends HttpServlet {
                alb.setFecha_creacion(fecha_creacion);
                alb.setCantidad_canciones(cantidad_canciones);
                alb.update();
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Albumes/Albumes.jsp");
                
            }
             
