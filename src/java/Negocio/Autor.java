@@ -73,6 +73,15 @@ public class Autor {
     public void setNacionalidad_id(int nacionalidad_id) {
         this.nacionalidad_id = nacionalidad_id;
     }
+    public void save(){
+        con.setInsertar("insert into Autores(nombre,apepat,apemat,fecha_nacimiento,estado,nacionalidad_id) values('"+this.getNombre()+"','"+this.getApepat()+"','"+this.getApemat()+"','"+this.getFecha_nacimiento()+"','activo','"+this.getNacionalidad_id()+"')");
+    }
+    public void delete(){
+        con.setInsertar("update Autores set estado='pasivo' where autor_id='"+this.getAutor_id()+"'");
+    }
+    public void update(){
+        con.setInsertar("update Autores set nombre='"+this.getNombre()+"',apepat='"+this.getApepat()+"',apemat='"+this.getApemat()+"',fecha_nacimiento='"+this.getFecha_nacimiento()+"',nacionalidad_id='"+this.getNacionalidad_id()+"' where autor_id='"+this.getAutor_id()+"'");
+    }
     
     
 }

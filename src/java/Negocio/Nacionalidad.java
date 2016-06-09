@@ -37,6 +37,15 @@ public class Nacionalidad {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    public void save(){
+        con.setInsertar("insert into nacionalidades(nombre,estado) values('"+this.getNombre()+"','activo')");
+    }
+    public void delete(){
+        con.setInsertar("update Nacionalidades set estado='pasivo' where nacionalidad_id='"+this.getNacionalidad_id()+"'");
+    }
+    public void update(){
+        con.setInsertar("update Nacionalidades set nombre='"+this.getNombre()+"' where nacionalidad_id='"+this.getNacionalidad_id()+"'");
+    }
     
     
 }
