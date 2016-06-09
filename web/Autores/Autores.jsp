@@ -1,3 +1,4 @@
+<%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,7 +63,35 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
-          Contenido de la Tabla Albumes!!!
+          <table class="table table-hover">
+                <thead>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>APEPAT</th>
+                <th>APEMAT</th>
+                <th>FECHA NACIMIENTO</th>
+                <th>NACIONALIDAD ID</th>
+                <th>ESTADO</th>
+                </thead>
+                <tbody>
+                    <%
+                       Conexion con=new Conexion();
+                       con.setConsulta("select Autores.autor_id, Autores.nombre, Autores.apepat, Autores.apemat, Autores.fecha_nacimiento, Nacionalidad.nacionalidad_id, Autor.estado from Autores, Nacionalidades where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
+                       while(con.getResultado().next()){
+                        out.println("<tr>");
+                           out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("nombre")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("apepat")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("apemat")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("fecha_nacimiento")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("nacionalidad_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("estado")+"</td>");
+                        out.println("</tr>");
+                       }
+                    %>
+                </tbody>
+            </table>
+          
           
       </div>
 

@@ -1,3 +1,4 @@
+<%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,8 +63,28 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
-          <h4>Aqui va lo que los usuarios que va a tener el sistema pero que no se podra agregar ni quitar
-            porque el administrador que no hay va a poder hacerlo y no un usuario cualquiera</h4>
+            <table class="table table-hover">
+                <thead>
+                <th>ID</th>
+                <th>USUARIO</th>
+                <th>FECHA NACIMIENTO</th>
+                <th>ESTADO</th>
+                </thead>
+                <tbody>
+                    <%
+                       Conexion con=new Conexion();
+                       con.setConsulta("select Usuarios.usuario_id,Usuarios.usuario,Usuarios.fecha_nacimiento from Usuarios where estado='activo'");
+                       while(con.getResultado().next()){
+                        out.println("<tr>");
+                           out.println("<td>"+con.getResultado().getString("usuario_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("usuario")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("fecha_nacimiento")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("estado")+"</td>");
+                        out.println("</tr>");
+                       }
+                    %>
+                </tbody>
+            </table>
           
       </div>
 

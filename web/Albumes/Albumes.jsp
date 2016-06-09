@@ -1,3 +1,4 @@
+<%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,7 +63,33 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
-          Contenido de la Tabla Albumes!!!
+          <table class="table table-hover">
+                <thead>
+                <th>ID</th>
+                <th>TITULO</th>
+                <th>ESTADO</th>
+                <th>CANTIDAD CANCIONES</th>
+                <th>AUTOR ID</th>
+                <th>CREADO POR</th>
+                </thead>
+                <tbody>
+                    <%
+                       Conexion con=new Conexion();
+                       con.setConsulta("select Albumes.album_id, Album.titulo, Album.estado, Album.cantidad_canciones, Album.autor_id, Album.creado_por from Album where Album.autor_id=Autor.autor_id, Album.creado_por=Usuarios.usuario_id and Album.estado='activo'");
+                       while(con.getResultado().next()){
+                        out.println("<tr>");
+                           out.println("<td>"+con.getResultado().getString("album_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("titulo")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("estado")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("cantidad_canciones")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("creado_por")+"</td>");
+                        out.println("</tr>");
+                       }
+                    %>
+                </tbody>
+            </table>
+          
           
       </div>
 
