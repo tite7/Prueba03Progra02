@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>GUARDAR AUTOR</h1>
-        <form method="post" action="../ServletAutor.java">
+        <form method="post" action="../ServletAutor">
             <table border="3">
                 <tr>
                     <td>NOMBRE</td>
@@ -36,6 +36,8 @@
                     <td><input type="text" name="nacionalidad_id" placeholder="Id Nacionalidad"></td>
                 </tr>
             </table>
+            <br>
+            <button type="submit" class="btn btn-default" name="guardar">Guardar</button>
         </form>
     </body>
 </html>

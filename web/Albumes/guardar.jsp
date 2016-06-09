@@ -40,6 +40,8 @@
                     <td><input type="text" name="creado_por" placeholder="Creado por..."></td>
                 </tr>
             </table>
+            <br>
+            <button type="submit" class="btn btn-default" name="guardar">Guardar</button>
         </form>
     </body>
 </html>

@@ -40,15 +40,14 @@ public class ServletNacionalidad extends HttpServlet {
                //ELIMINO USAURIO
                nac.delete();
                //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Nacionalidades/Nacionalidades.jsp");
                
            }else if(request.getParameter("guardar")!=null){
                String nombre=request.getParameter("nombre");
                Nacionalidad nac=new Nacionalidad();
                nac.setNombre(nombre);
                nac.save();
-               //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Nacionalidades/Nacionalidades.jsp");
                
            }else if(request.getParameter("editar")!=null){
                int nacionalidad_id=Integer.parseInt(request.getParameter("nacionalidad_id"));
@@ -56,7 +55,7 @@ public class ServletNacionalidad extends HttpServlet {
                Nacionalidad nac=new Nacionalidad();
                nac.setNombre(nombre);
                nac.update();
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Nacionalidades/Nacionalidades.jsp");
            }   
         }
     }

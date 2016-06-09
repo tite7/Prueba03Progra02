@@ -24,6 +24,8 @@
                     <td><input type="text" name="nombre" placeholder="Nombre"></td>
                 </tr>
             </table>
+            <br>
+            <button type="submit" class="btn btn-default" name="editar">Actualizar</button>
         </form>    
     </body>
 </html>

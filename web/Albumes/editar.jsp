@@ -28,6 +28,8 @@
                     <td><input type="text" name="cantidad_canciones" placeholder="Cantidad de Canciones"></td>
                 </tr>
             </table>
+            <br>
+            <button type="submit" class="btn btn-default" name="editar">Actualizar</button>
         </form>
     </body>
 </html>

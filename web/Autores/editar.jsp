@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>EDITAR AUTOR</h1>
-        <form method="post" action="../ServletAutor.java">
+        <form method="post" action="../ServletAutor">
             <table border="3">
                 <tr>
                     <td>ID</td>
@@ -40,6 +40,8 @@
                     <td><input type="text" name="nacionalidad_id" placeholder="Id Nacionalidad"></td>
                 </tr>
             </table>
+            <br>
+            <button type="submit" class="btn btn-default" name="editar">Actualizar</button>
         </form>
     </body>
 </html>

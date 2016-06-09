@@ -13,13 +13,15 @@
     </head>
     <body>
        <h1>GUARDAR NACIONALIDAD</h1>
-        <form method="post" action="../ServletNacionalidad.java">
+        <form method="POST" action="../ServletNacionalidad">
             <table border="3">
                 <tr>
                     <td>NOMBRE</td>
                     <td><input type="text" name="nombre" placeholder="Nombre"></td>
                 </tr>
             </table>
+            <br>
+            <button type="submit" class="btn btn-default" name="guardar" value="Guardar">Guardar</button>
         </form>
     </body>
 </html>

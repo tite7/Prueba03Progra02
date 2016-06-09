@@ -38,7 +38,7 @@ public class Nacionalidad {
         this.estado = estado;
     }
     public void save(){
-        con.setInsertar("insert into nacionalidades(nombre,estado) values('"+this.getNombre()+"','activo')");
+        con.setInsertar("insert into Nacionalidades(nombre, estado) values('"+this.getNombre()+"','activo')");
     }
     public void delete(){
         con.setInsertar("update Nacionalidades set estado='pasivo' where nacionalidad_id='"+this.getNacionalidad_id()+"'");

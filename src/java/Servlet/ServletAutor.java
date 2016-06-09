@@ -39,7 +39,7 @@ public class ServletAutor extends HttpServlet {
                //ELIMINO USAURIO
                aut.delete();
                //REDIRECCIONO A INDEX DESPUES DE ELIMINAR
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Autores.Autores..jsp");
                
            }else if(request.getParameter("guardar")!=null){
                String nombre=request.getParameter("nombre");
@@ -55,7 +55,7 @@ public class ServletAutor extends HttpServlet {
                aut.setNacionalidad_id(nacionalidad_id);
                aut.save();
                //REDIRECCIONAR A INDEX.JSP DeSPUES DE GUARDAR
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Autores.Autores.jsp");
                
            }else if(request.getParameter("editar")!=null){
                int autor_id=Integer.parseInt(request.getParameter("autor_id"));
@@ -72,7 +72,7 @@ public class ServletAutor extends HttpServlet {
                aut.setFecha_nacimiento(fecha_nacimiento);
                aut.setNacionalidad_id(nacionalidad_id);
                aut.update();
-               response.sendRedirect("index2.jsp");
+               response.sendRedirect("Autores.Autores..jsp");
                
            }
         }
