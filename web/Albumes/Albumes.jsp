@@ -65,6 +65,10 @@
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR ALBUM</a>
           <br>
+          <form method="post" action="Albumes.jsp">
+            Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
+        </form>
+          <br>
           <table class="table table-hover">
                 <thead>
                 <th>ID</th>
@@ -78,6 +82,18 @@
                 <tbody>
                     <%
                        Conexion con=new Conexion();
+                if (request.getParameter("buscarNombre") != null) {
+                    if (request.getParameter("buscarNombre").isEmpty()) {
+                        con.setConsulta("select * from Usuarios where estado='activo'");
+                    } else {
+                        String nombre = request.getParameter("buscarNombre");
+                        con.setConsulta("select * from Usuarios where nombre like '%"+nombre+"%' and estado='activo'");
+                    }
+                }else{
+                    con.setConsulta("select * from Usuarios where estado='activo'");
+                }
+            %>
+                    <%
                        con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.catidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, Autores where Albumes.autor_id=Autores.autor_id");
                        while(con.getResultado().next()){
                         out.println("<tr>");

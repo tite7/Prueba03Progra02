@@ -65,6 +65,10 @@
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR AUTOR</a>
           <br>
+          <form method="post" action="Autores.jsp">
+            Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
+        </form>
+          <br>
           <table class="table table-hover">
                 <thead>
                 <th>ID</th>
@@ -79,6 +83,18 @@
                 <tbody>
                     <%
                        Conexion con=new Conexion();
+                if (request.getParameter("buscarNombre") != null) {
+                    if (request.getParameter("buscarNombre").isEmpty()) {
+                        con.setConsulta("select * from Usuarios where estado='activo'");
+                    } else {
+                        String nombre = request.getParameter("buscarNombre");
+                        con.setConsulta("select * from Usuarios where nombre like '%"+nombre+"%' and estado='activo'");
+                    }
+                }else{
+                    con.setConsulta("select * from Usuarios where estado='activo'");
+                }
+            %>
+                    <%
                        con.setConsulta("select Autores.autor_id, Autores.nombre, Autores.apepat, Autores.apemat, Autores.fecha_nacimiento, Nacionalidades.nacionalidad_id, Autores.estado from Autores, Nacionalidades where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");

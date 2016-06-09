@@ -13,11 +13,11 @@
     </head>
     <body>
         <h1>GUARDAR ALBUM</h1>
-        <form method="post" action="../ServletAlbum.java">
+        <form method="POST" action="../ServletAlbum">
             <table border="3">
                 <tr>
                     <td>TITULO</td>
-                    <td><input type="text" name="album_id" placeholder="Id Album"></td>
+                    <td><input type="text" name="titulo" placeholder="Titulo"></td>
                 </tr>
                 <tr>
                     <td>FECHA CREACION</td>
@@ -25,15 +25,11 @@
                 </tr>
                 <tr>
                     <td>CANTIDAD CANCIONES</td>
-                    <td><input type="text" name="cantidad_canciones" placeholder="Cantidad de Canciones"></td>
+                    <td><input type="text" name="catidad_canciones" placeholder="Cantidad de Canciones"></td>
                 </tr>
                 <tr>
                     <td>ID AUTOR</td>
                     <td><input type="text" name="autor_id" placeholder="Id Autor"></td>
-                </tr>
-                <tr>
-                    <td>CANTIDAD CANCIONES</td>
-                    <td><input type="text" name="cantidad_canciones" placeholder="Cantidad de Canciones"></td>
                 </tr>
                 <tr>
                     <td>CREADO POR</td>

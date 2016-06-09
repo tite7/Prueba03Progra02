@@ -65,6 +65,10 @@
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR NACIONALIDAD</a>
         <br>
+        <form method="post" action="Nacionalidades.jsp">
+            Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
+        </form>
+        <br>
           <table class="table table-hover">
                 <thead>
                 <th>ID</th>
@@ -74,7 +78,19 @@
                 </thead>
                 <tbody>
                     <%
-                       Conexion con=new Conexion();
+                Conexion con = new Conexion();
+                if (request.getParameter("buscarNombre") != null) {
+                    if (request.getParameter("buscarNombre").isEmpty()) {
+                        con.setConsulta("select * from Usuarios where estado='activo'");
+                    } else {
+                        String nombre = request.getParameter("buscarNombre");
+                        con.setConsulta("select * from Usuarios where nombre like '%"+nombre+"%' and estado='activo'");
+                    }
+                }else{
+                    con.setConsulta("select * from Usuarios where estado='activo'");
+                }
+            %>
+                    <%
                        con.setConsulta("select Nacionalidades.nacionalidad_id,Nacionalidades.nombre,Nacionalidades.estado from Nacionalidades where estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");

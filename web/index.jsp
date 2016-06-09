@@ -35,16 +35,15 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form action="ServletUsuario1" method="POST" class="form-signin">
         <h2 class="form-signin-heading">Por favor ingrese...</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="usuario" id="inputEmail" class="form-control" placeholder="Usuario">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="clave" id="inputPassword" class="form-control" placeholder="Clave" required>
-        <br>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-      </form>
 
+        <input type="text" name="usuario" class="form-control" placeholder="Usuario">
+
+        <input type="password" name="clave" class="form-control" placeholder="Clave" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="enviar">Entrar</button>
+      </form>
     </div> <!-- /container -->
 
 
