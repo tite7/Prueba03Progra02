@@ -73,6 +73,15 @@ public class Album {
     public void setCreado_por(int creado_por) {
         this.creado_por = creado_por;
     }
+    public void save(){
+        con.setInsertar("insert into Albumes(titulo,fecha_creacion,cantidad_canciones,creado_por,estado) values('"+this.getTitulo()+"','"+this.getFecha_creacion()+"','"+this.getCantidad_canciones()+"','"+this.getCreado_por()+"','activo')");
+    }
+    public void delete(){
+        con.setInsertar("update Albumes set estado='pasivo' where album_id='"+this.getAlbum_id()+"'");
+    }
+    public void update(){
+        con.setInsertar("update Albumes set titulo='"+this.getTitulo()+"',fecha_creacion='"+this.getFecha_creacion()+"',cantidad_canciones='"+this.getCantidad_canciones()+"',creado_por='"+this.getCreado_por()+"' where album_id='"+this.getAlbum_id()+"'");
+    }
     
     
 }

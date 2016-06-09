@@ -56,6 +56,15 @@ public class Usuario {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    public void save(){
+        con.setInsertar("insert into Usuarios(usuario,clave,fecha_nacimiento,estado) values('"+this.getUsuario()+"','"+this.getClave()+"','"+this.getFecha_nacimiento()+"','activo')");
+    }
+    public void delete(){
+        con.setInsertar("update Usuarios set estado='pasivo' where usuario_id='"+this.getUsuario_id()+"'");
+    }
+    public void update(){
+        con.setInsertar("update Usuarios set usuario='"+this.getUsuario()+"',clave='"+this.getClave()+"',fecha_nacimiento='"+this.getFecha_nacimiento()+"' where usuario_id='"+this.getUsuario_id()+"'");
+    }
     
     
 }
