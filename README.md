@@ -11,14 +11,16 @@ MariaDB [prueba03]> create table Usuarios(
     -> estado varchar(10));
 Query OK, 0 rows affected (0.06 sec)
 
-MariaDB [prueba03]> create table Albumes(
+MariaDB [prueba03]> create table albumes(
     -> album_id int(10) primary key not null auto_increment,
     -> titulo varchar(20),
-    -> estado varchar(10),
-    -> cantidad_canciones int(4),
+    -> fecha_creacion varchar(15),
+    -> cantidad_canciones int (4),
     -> autor_id int(10),
-    -> creado_por int(10));
-Query OK, 0 rows affected (0.02 sec)
+    -> creado_por int(10),
+    -> estado varchar(10)
+    -> );
+Query OK, 0 rows affected (0.28 sec)
 
 MariaDB [prueba03]> create table Autores(
     -> autor_id int(3) primary key not null auto_increment,
