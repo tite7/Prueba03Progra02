@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td>CANTIDAD CANCIONES</td>
-                    <td><input type="text" name="catidad_canciones" placeholder="Cantidad de Canciones"></td>
+                    <td><input type="text" name="cantidad_canciones" placeholder="Cantidad de Canciones"></td>
                 </tr>
             </table>
             <br>
