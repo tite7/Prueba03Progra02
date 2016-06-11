@@ -16,10 +16,6 @@
         <servlet-name>ServletNacionalidad</servlet-name>
         <servlet-class>Servlet.ServletNacionalidad</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ServletUsuario1</servlet-name>
-        <servlet-class>Servlet.ServletUsuario1</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>ServletUsuario</servlet-name>
         <url-pattern>/ServletUsuario</url-pattern>
@@ -35,10 +31,6 @@
     <servlet-mapping>
         <servlet-name>ServletNacionalidad</servlet-name>
         <url-pattern>/ServletNacionalidad</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletUsuario1</servlet-name>
-        <url-pattern>/ServletUsuario1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

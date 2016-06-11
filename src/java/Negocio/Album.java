@@ -80,7 +80,7 @@ public class Album {
         con.setInsertar("update Albumes set estado='pasivo' where album_id='"+this.getAlbum_id()+"'");
     }
     public void update(){
-        con.setInsertar("update Albumes set titulo='"+this.getTitulo()+"',fecha_creacion='"+this.getFecha_creacion()+"',catidad_canciones='"+this.getCantidad_canciones()+"',creado_por='"+this.getCreado_por()+"' where album_id='"+this.getAlbum_id()+"'");
+        con.setInsertar("update Albumes set titulo='"+this.getTitulo()+"',fecha_creacion='"+this.getFecha_creacion()+"',cantidad_canciones='"+this.getCantidad_canciones()+"',creado_por='"+this.getCreado_por()+"' where album_id='"+this.getAlbum_id()+"'");
     }
     
     

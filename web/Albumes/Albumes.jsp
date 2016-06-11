@@ -94,13 +94,13 @@
                 }
             %>
                     <%
-                       con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.catidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, Autores where Albumes.autor_id=Autores.autor_id");
+                       con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.cantidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, Autores where Albumes.autor_id=Autores.autor_id");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("album_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("titulo")+"</td>");
                            out.println("<td>"+con.getResultado().getString("estado")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("catidad_canciones")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("cantidad_canciones")+"</td>");
                            out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("creado_por")+"</td>");
                            out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("album_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
