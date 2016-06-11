@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Navbar Template for Bootstrap</title>
+    <title>Tabla Autores</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Templates/css/Bootstrap.min.css" rel="stylesheet">
@@ -64,6 +64,7 @@
       <div>
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR AUTOR</a>
+          <br>
           <br>
           <form method="post" action="Autores.jsp">
             Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">

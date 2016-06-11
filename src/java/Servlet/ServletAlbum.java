@@ -63,11 +63,15 @@ public class ServletAlbum extends HttpServlet {
                String titulo=request.getParameter("titulo");
                String fecha_creacion=request.getParameter("fecha_creacion");
                int cantidad_canciones=Integer.parseInt(request.getParameter("cantidad_canciones"));
+               int autor_id=Integer.parseInt(request.getParameter("autor_id"));
+               int creado_por=Integer.parseInt(request.getParameter("creado_por"));
                Album alb=new Album();
                alb.setAlbum_id(album_id);
                alb.setTitulo(titulo);
                alb.setFecha_creacion(fecha_creacion);
                alb.setCantidad_canciones(cantidad_canciones);
+               alb.setAutor_id(autor_id);
+               alb.setCreado_por(creado_por);
                alb.update();
                response.sendRedirect("Albumes/Albumes.jsp");
                

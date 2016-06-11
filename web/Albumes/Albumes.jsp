@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Navbar Template for Bootstrap</title>
+    <title>Tabla Albumes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Templates/css/Bootstrap.min.css" rel="stylesheet">
@@ -65,6 +65,7 @@
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR ALBUM</a>
           <br>
+          <br>
           <form method="post" action="Albumes.jsp">
             Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
         </form>
@@ -80,6 +81,7 @@
                 <th>ACCIONES</th>
                 </thead>
                 <tbody>
+                <br>
                     <%
                        Conexion con=new Conexion();
                 if (request.getParameter("buscarNombre") != null) {
