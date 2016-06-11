@@ -94,7 +94,8 @@
                 }
             %>
                     <%
-                       con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.cantidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, Autores where Albumes.autor_id=Autores.autor_id");
+                       con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.cantidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, " 
+                               + "Autores where Albumes.autor_id=Autores.autor_id AND Albumes.estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("album_id")+"</td>");
