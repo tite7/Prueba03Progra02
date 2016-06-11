@@ -4,6 +4,7 @@
     Author     : Mio
 --%>
 
+<%@page import="AccesoDato.Conexion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,12 +13,17 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <% 
+                        
+                        Conexion con=new Conexion();
+                     
+                    %>
         <h1>EDITAR AUTOR</h1>
-        <form method="post" action="../ServletAlbum">
+        <form method="POST" action="../ServletAlbum">
             <table border="3">
                 <tr>
                     <td>ID</td>
-                    <td><input type="text" name="album_id" placeholder="Id Album" readonly></td>
+                    <td><input type="text" name="album_id" readonly></td>
                 </tr>
                 <tr>
                     <td>TITULO</td>
@@ -25,7 +31,7 @@
                 </tr>
                 <tr>
                     <td>FECHA CREACION</td>
-                    <td><input type="text" name="fecha_creacion" placeholder="Fecha de Creacion"></td>
+                    <td><input type="date" name="fecha_creacion" ></td>
                 </tr>
                 <tr>
                     <td>CANTIDAD CANCIONES</td>

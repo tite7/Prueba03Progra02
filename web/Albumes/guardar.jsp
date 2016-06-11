@@ -21,7 +21,7 @@
                 </tr>
                 <tr>
                     <td>FECHA CREACION</td>
-                    <td><input type="text" name="fecha_creacion" placeholder="Fecha de Creacion"></td>
+                    <td><input type="date" name="fecha_creacion"></td>
                 </tr>
                 <tr>
                     <td>CANTIDAD CANCIONES</td>

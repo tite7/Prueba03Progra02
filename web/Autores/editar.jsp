@@ -34,7 +34,7 @@
                 </tr>
                 <tr>
                     <td>FECHA NACIMIENTO</td>
-                    <td><input type="text" name="fecha_nacimiento" placeholder="Fecha de Nacimiento"></td>
+                    <td><input type="date" name="fecha_nacimiento"></td>
                 </tr>
                 <tr>
                     <td>NACIONALIDAD ID</td>
