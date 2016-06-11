@@ -80,7 +80,9 @@ public class Autor {
         con.setInsertar("update Autores set estado='pasivo' where autor_id='"+this.getAutor_id()+"'");
     }
     public void update(){
-        con.setInsertar("update Autores set nombre='"+this.getNombre()+"',apepat='"+this.getApepat()+"',apemat='"+this.getApemat()+"',fecha_nacimiento='"+this.getFecha_nacimiento()+"',nacionalidad_id='"+this.getNacionalidad_id()+"' where autor_id='"+this.getAutor_id()+"'");
+        con.setInsertar("update Autores set nombre='"+this.getNombre()+"',apepat='"+this.getApepat()+"',"
+                + "apemat='"+this.getApemat()+"',fecha_nacimiento='"+this.getFecha_nacimiento()+"',"
+                + "nacionalidad_id='"+this.getNacionalidad_id()+"' where autor_id='"+this.getAutor_id()+"'");
     }
     
     

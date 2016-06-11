@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>EDITAR NACIONALIDAD</h1>
-        <form method="post" action="../ServletNacionalidad.java">
+        <form method="post" action="../ServletNacionalidad">
             <table border="3">
                 <tr>
                     <td>ID</td>

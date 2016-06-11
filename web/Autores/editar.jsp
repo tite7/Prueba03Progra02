@@ -14,12 +14,12 @@
     </head>
     <body>
         <h1>EDITAR AUTOR</h1>
-        <form method="POST" action="../ServletAutor.java">
+        <form method="POST" action="../ServletAutor">
             <table border="3">
-                <!--<tr>
+                <tr>
                     <td>ID</td>
-                    <td><input type="text" name="autor_id" placeholder="Id Autor" readonly></td>
-                </tr>-->
+                    <td><input type="text" name="autor_id" placeholder="Id Autor"></td>
+                </tr>
                 <tr>
                     <td>NOMBRE</td>
                     <td><input type="text" name="nombre" placeholder="Nombre"></td>

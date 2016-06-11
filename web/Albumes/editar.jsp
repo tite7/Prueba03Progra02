@@ -14,11 +14,11 @@
     </head>
     <body>
         <h1>EDITAR AUTOR</h1>
-        <form method="POST" action="../ServletAlbum?editar=si">
+        <form method="POST" action="../ServletAlbum">
             <table border="3">
                 <tr>
                     <td>ID</td>
-                    <td><input type="text" name="album_id" readonly></td>
+                    <td><input type="text" name="album_id" placeholder="Id Album"></td>
                 </tr>
                 <tr>
                     <td>TITULO</td>
