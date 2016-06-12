@@ -70,6 +70,7 @@
             Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
         </form>
           <br>
+          <% Conexion con=new Conexion();%>
           <table class="table table-hover">
                 <thead>
                 <th>ID</th>
@@ -83,7 +84,6 @@
                 <tbody>
                 <br>
                     <%
-                       Conexion con=new Conexion();
                 if (request.getParameter("buscarNombre") != null) {
                     if (request.getParameter("buscarNombre").isEmpty()) {
                         con.setConsulta("select * from Albumes where estado='activo'");
