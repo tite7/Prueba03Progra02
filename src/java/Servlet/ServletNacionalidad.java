@@ -53,6 +53,7 @@ public class ServletNacionalidad extends HttpServlet {
                int nacionalidad_id=Integer.parseInt(request.getParameter("nacionalidad_id"));
                String nombre=request.getParameter("nombre");
                Nacionalidad nac=new Nacionalidad();
+               nac.setNacionalidad_id(nacionalidad_id);
                nac.setNombre(nombre);
                nac.update();
                response.sendRedirect("Nacionalidades/Nacionalidades.jsp");

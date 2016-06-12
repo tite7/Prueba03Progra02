@@ -86,13 +86,13 @@
                        Conexion con=new Conexion();
                 if (request.getParameter("buscarNombre") != null) {
                     if (request.getParameter("buscarNombre").isEmpty()) {
-                        con.setConsulta("select * from Usuarios where estado='activo'");
+                        con.setConsulta("select * from Autores where estado='activo'");
                     } else {
                         String nombre = request.getParameter("buscarNombre");
-                        con.setConsulta("select * from Usuarios where nombre like '%"+nombre+"%' and estado='activo'");
+                        con.setConsulta("select * from Autores where nombre like '%"+nombre+"%' and estado='activo'");
                     }
                 }else{
-                    con.setConsulta("select * from Usuarios where estado='activo'");
+                    con.setConsulta("select * from Autores where estado='activo'");
                 }
             %>
                     <%

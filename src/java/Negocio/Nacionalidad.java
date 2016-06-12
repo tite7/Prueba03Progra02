@@ -44,7 +44,8 @@ public class Nacionalidad {
         con.setInsertar("update Nacionalidades set estado='pasivo' where nacionalidad_id='"+this.getNacionalidad_id()+"'");
     }
     public void update(){
-        con.setInsertar("update Nacionalidades set nombre='"+this.getNombre()+"' where nacionalidad_id='"+this.getNacionalidad_id()+"'");
+        con.setInsertar("update Nacionalidades set nombre='"+this.getNombre()+"', nacionalidad_id='" + this.getNacionalidad_id() + 
+                "' where nacionalidad_id='"+this.getNacionalidad_id()+"'");
     }
     
     
