@@ -65,6 +65,7 @@ public class ServletAutor extends HttpServlet {
                String fecha_nacimiento=request.getParameter("fecha_nacimiento");
                int nacionalidad_id=Integer.parseInt(request.getParameter("nacionalidad_id"));
                Autor aut=new Autor();
+               aut.setAutor_id(autor_id);
                aut.setNombre(nombre);
                aut.setApepat(apepat);
                aut.setApemat(apemat);
