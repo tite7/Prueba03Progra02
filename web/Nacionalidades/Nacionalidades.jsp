@@ -54,7 +54,7 @@
               <li class="active"><a href="Nacionalidades.jsp">Nacionalidades</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
-            <li><a href="../index.jsp">Cerrar Sesion</a></li>
+            <li><a href="../Sesion.jsp">Cerrar Sesion</a></li>
           </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
