@@ -65,7 +65,7 @@
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR USUARIO</a>
           <br>
-            <table class="table table-hover">
+            <table class="table table-striped">
                 <thead>
                 <th>ID</th>
                 <th>USUARIO</th>

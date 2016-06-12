@@ -71,7 +71,7 @@
         </form>
           <br>
           <% Conexion con=new Conexion();%>
-          <table class="table table-hover">
+          <table class="table table-striped">
                 <thead>
                 <th>ID</th>
                 <th>TITULO</th>

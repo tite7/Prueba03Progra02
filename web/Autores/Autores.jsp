@@ -70,7 +70,7 @@
             Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
         </form>
           <br>
-          <table class="table table-hover">
+          <table class="table table-striped">
                 <thead>
                 <th>ID</th>
                 <th>NOMBRE</th>
