@@ -13,12 +13,12 @@
     </head>
     <body>
         <h1>EDITAR NACIONALIDAD</h1>
-            <% String nacionalidad_id=request.getParameter("nacionalidad_id"); %> 
+            <% //String nacionalidad_id=request.getParameter("nacionalidad_id"); %> 
         <form method="post" action="../ServletNacionalidad">
             <table border="3">
                 <tr>
                     <td>ID</td>
-                    <td><input type="text" name="nacionalidad_id" value="<% out.println(""+nacionalidad_id);  %>"></td>
+                    <td><input type="text" name="nacionalidad_id" placeholder="Id Nacionalidad"></td>
                 </tr>
                 <tr>
                     <td>NOMRBE</td>

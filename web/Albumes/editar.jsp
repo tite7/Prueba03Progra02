@@ -14,12 +14,12 @@
     </head>
     <body>
         <h1>EDITAR ALBUM</h1>
-            <% String album_id=request.getParameter("album_id"); %> 
+            <% //String album_id=request.getParameter("album_id"); %> 
             <form method="POST" action="../ServletAlbum">
             <table border="3">
                 <tr>
                     <td>ID</td>
-                    <td><input type="text" name="album_id" value="<% out.println(""+album_id);  %>" readonly></td>
+                    <td><input type="text" name="album_id" placeholder="Id Album"></td>
                 </tr>
                 <tr>
                     <td>TITULO</td>

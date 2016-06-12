@@ -14,12 +14,12 @@
     </head>
     <body>
         <h1>EDITAR AUTOR</h1>
-        <% String autor_id=request.getParameter("autor_id"); %> 
+        <% //String autor_id=request.getParameter("autor_id"); %> 
         <form method="POST" action="../ServletAutor">
             <table border="3">
                 <tr>
                     <td>ID</td>
-                    <td><input type="text" name="autor_id" value="<% out.println(""+autor_id);  %>" readonly></td>
+                    <td><input type="text" name="autor_id" placeholder="Id Autor"></td>
                 </tr>
                 <tr>
                     <td>NOMBRE</td>
