@@ -38,6 +38,13 @@ MariaDB [prueba03]> create table Autores(
     -> nombre varchar(30),
     -> estado varchar(10)
     -> );
+    
+    MariaDB [prueba03]> create table sesiones(
+    -> sesion_id int(3) primary key not null auto_increment,
+    -> sesion varchar (20),
+    -> clave varchar (10)
+    -> );
+Query OK, 0 rows affected (0.41 sec)
 
 
 </form action="login" method="POST">
