@@ -44,7 +44,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            <a class="navbar-brand" href="../index2.jsp">Bienvenido(...Nombre del Usuario...)</a>
+            <a class="navbar-brand" href="../index2.jsp">Bienvenido Usuario</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -67,7 +67,8 @@
           <br>
           <br>
           <form method="post" action="Albumes.jsp">
-            Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
+            <% String nom = request.getParameter("buscar"); %>
+              Buscar por Titulo:<input type="text" name="buscar" ><input type="submit" value="Buscar">
         </form>
           <br>
           <% Conexion con=new Conexion();%>
@@ -84,20 +85,19 @@
                 <tbody>
                 <br>
                     <%
-                if (request.getParameter("buscarNombre") != null) {
-                    if (request.getParameter("buscarNombre").isEmpty()) {
+                if (request.getParameter("buscar") != null) {
+                    if (request.getParameter("buscar").isEmpty()) {
                         con.setConsulta("select * from Albumes where estado='activo'");
                     } else {
-                        String nombre = request.getParameter("buscarNombre");
-                        con.setConsulta("select * from Albumes where nombre like '%"+nombre+"%' and estado='activo'");
+                        
+                        con.setConsulta("select * from Albumes where titulo like '%"+ nom +"%' and estado='activo'");
                     }
                 }else{
                     con.setConsulta("select * from Albumes where estado='activo'");
                 }
             %>
                     <%
-                       con.setConsulta("select Albumes.album_id, Albumes.titulo, Albumes.estado, Albumes.cantidad_canciones, Autores.autor_id, Albumes.creado_por from Albumes, " 
-                               + "Autores where Albumes.autor_id=Autores.autor_id AND Albumes.estado='activo'");
+                       con.setConsulta("select * from Albumes where Albumes.autor_id=Autores.autor_id AND Albumes.estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("album_id")+"</td>");

@@ -44,7 +44,8 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            <a class="navbar-brand" href="index2.jsp">Bienvenido(...Nombre del Usuario...)</a>
+              <% Conexion con=new Conexion();%>
+              <a class="navbar-brand" href="index2.jsp">Bienvenido Usuario</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -72,7 +73,7 @@
                 </thead>
                 <tbody>
                     <%
-                       Conexion con=new Conexion();
+                      
                        con.setConsulta("select * from Usuarios where estado='activo' and usuario_id=1");
                        while(con.getResultado().next()){
                         out.println("<tr>");

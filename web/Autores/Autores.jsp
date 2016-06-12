@@ -44,7 +44,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            <a class="navbar-brand" href="../index2.jsp">Bienvenido(...Nombre del Usuario...)</a>
+            <a class="navbar-brand" href="../index2.jsp">Bienvenido Usuario</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -67,7 +67,7 @@
           <br>
           <br>
           <form method="post" action="Autores.jsp">
-            Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
+            Buscar por Nombre:<input type="text" name="buscar" ><input type="submit" value="Buscar">
         </form>
           <br>
           <table class="table table-striped">
@@ -84,11 +84,11 @@
                 <tbody>
                     <%
                        Conexion con=new Conexion();
-                if (request.getParameter("buscarNombre") != null) {
-                    if (request.getParameter("buscarNombre").isEmpty()) {
+                if (request.getParameter("buscar") != null) {
+                    if (request.getParameter("buscar").isEmpty()) {
                         con.setConsulta("select * from Autores where estado='activo'");
                     } else {
-                        String nombre = request.getParameter("buscarNombre");
+                        String nombre = request.getParameter("buscar");
                         con.setConsulta("select * from Autores where nombre like '%"+nombre+"%' and estado='activo'");
                     }
                 }else{
@@ -96,7 +96,7 @@
                 }
             %>
                     <%
-                       con.setConsulta("select Autores.autor_id, Autores.nombre, Autores.apepat, Autores.apemat, Autores.fecha_nacimiento, Nacionalidades.nacionalidad_id, Autores.estado from Autores, Nacionalidades where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
+                       con.setConsulta("select * from Autores where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");

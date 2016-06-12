@@ -44,7 +44,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            <a class="navbar-brand" href="../index2.jsp">Bienvenido(...Nombre del Usuario...)</a>
+            <a class="navbar-brand" href="../index2.jsp">Bienvenido Usuario</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -65,6 +65,12 @@
           <br>
         <a href="guardar.jsp" class="btn btn-primary">AGREGAR USUARIO</a>
           <br>
+          <% Conexion con=new Conexion(); %>
+          <br>
+          <form method="post" action="Usuarios.jsp">
+            Buscar por Nombre:<input type="text" name="buscar" ><input type="submit" value="Buscar">
+        </form>
+          <br>
             <table class="table table-striped">
                 <thead>
                 <th>ID</th>
@@ -75,7 +81,19 @@
                 </thead>
                 <tbody>
                     <%
-                       Conexion con=new Conexion();
+                if (request.getParameter("buscar") != null) {
+                    if (request.getParameter("buscar").isEmpty()) {
+                        con.setConsulta("select * from Usuarios where estado='activo'");
+                    } else {
+                        String nombre = request.getParameter("buscar");
+                        con.setConsulta("select * from Usuarios where nombre like '%"+nombre+"%' and estado='activo'");
+                    }
+                }else{
+                    con.setConsulta("select * from Usuarios where estado='activo'");
+                }
+            %>
+                    <%
+
                        con.setConsulta("select * from Usuarios where estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");

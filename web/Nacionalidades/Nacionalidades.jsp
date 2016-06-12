@@ -44,7 +44,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            <a class="navbar-brand" href="../index2.jsp">Bienvenido(...Nombre del Usuario...)</a>
+            <a class="navbar-brand" href="../index2.jsp">Bienvenido Usuario</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -67,7 +67,7 @@
         <br>
         <br>
         <form method="post" action="Nacionalidades.jsp">
-            Buscar por Nombre:<input type="text" name="buscarNombre" ><input type="submit" value="Buscar">
+            Buscar por Nombre:<input type="text" name="buscar" ><input type="submit" value="Buscar">
         </form>
         <br>
           <table class="table table-striped">
@@ -80,11 +80,11 @@
                 <tbody>
                     <%
                 Conexion con = new Conexion();
-                if (request.getParameter("buscarNombre") != null) {
-                    if (request.getParameter("buscarNombre").isEmpty()) {
+                if (request.getParameter("buscar") != null) {
+                    if (request.getParameter("buscar").isEmpty()) {
                         con.setConsulta("select * from Nacionalidades where estado='activo'");
                     } else {
-                        String nombre = request.getParameter("buscarNombre");
+                        String nombre = request.getParameter("buscar");
                         con.setConsulta("select * from Nacionalidades where nombre like '%"+nombre+"%' and estado='activo'");
                     }
                 }else{
@@ -92,7 +92,7 @@
                 }
             %>
                     <%
-                       con.setConsulta("select Nacionalidades.nacionalidad_id,Nacionalidades.nombre,Nacionalidades.estado from Nacionalidades where estado='activo'");
+                       con.setConsulta("select * from Nacionalidades where Autores.autores_id=Autores.Nacionalidad_id and estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
                            out.println("<td>"+con.getResultado().getString("nacionalidad_id")+"</td>");

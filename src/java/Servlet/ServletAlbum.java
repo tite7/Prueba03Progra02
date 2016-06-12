@@ -76,7 +76,6 @@ public class ServletAlbum extends HttpServlet {
                response.sendRedirect("Albumes/Albumes.jsp");
                
            }
-            
         }
     }
 
