@@ -1,3 +1,9 @@
+<%-- 
+    Document   : Reportes
+    Created on : 28-jun-2016, 22:15:05
+    Author     : Toshiba
+--%>
+
 <%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +16,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Tabla Albumes</title>
+    <title>Reportes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Templates/css/Bootstrap.min.css" rel="stylesheet">
@@ -49,10 +55,10 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
-              <li class="active"><a href="Albumes.jsp">Albumes</a></li>
+              <li><a href="../Albumes/Albumes.jsp">Albumes</a></li>
               <li><a href="../Autores/Autores.jsp">Autores</a></li>
-              <li><a href="../Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
-              <li><a href="../Reportes/Reportes.jsp">Reportes</a></li>
+              <li><a href="../Nacionalidades.jsp">Nacionalidades</a></li>
+              <li class="active"><a href="Reportes.jsp">Reportes</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
             <li><a href="../Sesion.jsp">Cerrar Sesion</a></li>
@@ -63,52 +69,36 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div>
-          <br>
-        <a href="guardar.jsp" class="btn btn-primary">AGREGAR ALBUM</a>
-          <br>
-          <br>
-          <form method="post" action="Albumes.jsp">
-            <% String nom = request.getParameter("buscar"); %>
-              Buscar por Titulo:<input type="text" name="buscar" ><input type="submit" value="Buscar">
-        </form>
-          <br>
-          <% Conexion con=new Conexion();%>
+      
+        <br>
           <table class="table table-striped">
                 <thead>
-                <th>ID</th>
-                <th>TITULO</th>
-                <th>ESTADO</th>
-                <th>CANTIDAD CANCIONES</th>
-                <th>AUTOR ID</th>
-                <th>CREADO POR</th>
-                <th>ACCIONES</th>
+                <th>TABLAS</th>
+                <th>REPORTES</th>
                 </thead>
                 <tbody>
-                <br>
                     <%
+                Conexion con = new Conexion();
                 if (request.getParameter("buscar") != null) {
                     if (request.getParameter("buscar").isEmpty()) {
-                        con.setConsulta("select * from Albumes where estado='activo'");
+                        con.setConsulta("select * from Nacionalidades where estado='activo'");
                     } else {
-                        
-                        con.setConsulta("select * from Albumes where titulo like '%"+ nom +"%' and estado='activo'");
+                        String nombre = request.getParameter("buscar");
+                        con.setConsulta("select * from Nacionalidades where nombre like '%"+nombre+"%' and estado='activo'");
                     }
                 }else{
-                    con.setConsulta("select * from Albumes where estado='activo'");
+                    con.setConsulta("select * from Nacionalidades where estado='activo'");
                 }
             %>
                     <%
-                       con.setConsulta("select * from Albumes where Albumes.autor_id=Autores.autor_id AND Albumes.estado='activo'");
+                       con.setConsulta("select * from Nacionalidades where Autores.autores_id=Autores.Nacionalidad_id and estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
-                           out.println("<td>"+con.getResultado().getString("album_id")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("titulo")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("nacionalidad_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("nombre")+"</td>");
                            out.println("<td>"+con.getResultado().getString("estado")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("cantidad_canciones")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("creado_por")+"</td>");
-                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("album_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
-                           out.println("<td>"+"<a href='../ServletAlbum?eliminar="+con.getResultado().getString("album_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
+                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("nacionalidad_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
+                           out.println("<td>"+"<a href='../ServletNacionalidad?eliminar="+con.getResultado().getString("nacionalidad_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
                         out.println("</tr>");
                        }
                     %>
@@ -125,7 +115,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>');</script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../Templates/js/Bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
