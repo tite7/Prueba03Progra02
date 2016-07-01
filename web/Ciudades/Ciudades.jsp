@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Tabla Autores</title>
+    <title>Tabla Ciudades</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Templates/css/Bootstrap.min.css" rel="stylesheet">
@@ -50,8 +50,10 @@
             <ul class="nav navbar-nav">
               <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
               <li><a href="../Albumes/Albumes.jsp">Albumes</a></li>
-              <li class="active"><a href="Autores.jsp">Autores</a></li>
+              <li><a href="../Autores/Autores.jsp">Autores</a></li>
               <li><a href="../Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
+              <li><a href="../Paises/Paises.jsp">Paises</a></li>
+              <li class="active"><a href="Ciudades.jsp">Ciudades</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
             <li><a href="../Sesion.jsp">Cerrar Sesion</a></li>
@@ -63,51 +65,49 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
-        <a href="guardar.jsp" class="btn btn-primary">AGREGAR AUTOR</a>
+        <a href="guardar.jsp" class="btn btn-primary">AGREGAR CIUDAD</a>
           <br>
           <br>
-          <form method="post" action="Autores.jsp">
-            Buscar por Nombre:<input type="text" name="buscar" ><input type="submit" value="Buscar">
+          <form method="post" action="Ciudad.jsp">
+            <% String nom = request.getParameter("buscar"); %>
+              Buscar por Titulo:<input type="text" name="buscar" ><input type="submit" value="Buscar">
         </form>
           <br>
+          <% Conexion con=new Conexion();%>
           <table class="table table-striped">
                 <thead>
                 <th>ID</th>
                 <th>NOMBRE</th>
-                <th>APEPAT</th>
-                <th>APEMAT</th>
-                <th>FECHA NACIMIENTO</th>
-                <th>NACIONALIDAD ID</th>
+                <th>CREADO POR</th>
                 <th>ESTADO</th>
+                <th>PAIS ID</th>
                 <th>ACCIONES</th>
                 </thead>
                 <tbody>
+                <br>
                     <%
-                       Conexion con=new Conexion();
                 if (request.getParameter("buscar") != null) {
                     if (request.getParameter("buscar").isEmpty()) {
-                        con.setConsulta("select * from Autores where estado='activo'");
+                        con.setConsulta("select * from Ciudades where estado='activo'");
                     } else {
-                        String nombre = request.getParameter("buscar");
-                        con.setConsulta("select * from Autores where nombre like '%"+nombre+"%' and estado='activo'");
+                        
+                        con.setConsulta("select * from Ciudades where titulo like '%"+ nom +"%' and estado='activo'");
                     }
                 }else{
-                    con.setConsulta("select * from Autores where estado='activo'");
+                    con.setConsulta("select * from Ciudades where estado='activo'");
                 }
             %>
                     <%
-                       con.setConsulta("select * from Autores where Autores.nacionalidad_id=Nacionalidades.nacionalidad_id and Autores.estado='activo'");
+                       con.setConsulta("select * from Ciudades where Ciudades.ciudad_id=Usuarios.ciudad_id AND Ciudades.estado='activo'");
                        while(con.getResultado().next()){
                         out.println("<tr>");
-                           out.println("<td>"+con.getResultado().getString("autor_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("ciudad_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("nombre")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("apepat")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("apemat")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("fecha_nacimiento")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("nacionalidad_id")+"</td>");
+                           out.println("<td>"+con.getResultado().getString("creado_por")+"</td>");
                            out.println("<td>"+con.getResultado().getString("estado")+"</td>");
-                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("autor_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
-                           out.println("<td>"+"<a href='../ServletAutor?eliminar="+con.getResultado().getString("autor_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
+                           out.println("<td>"+con.getResultado().getString("pais_id")+"</td>");
+                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("ciudad_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
+                           out.println("<td>"+"<a href='../ServletCiudad?eliminar="+con.getResultado().getString("ciudad_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
                         out.println("</tr>");
                        }
                     %>
@@ -124,7 +124,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>');</script>
     <script src="../Templates/js/Bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>

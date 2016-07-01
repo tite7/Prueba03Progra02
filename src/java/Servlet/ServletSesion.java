@@ -30,11 +30,8 @@ public class ServletSesion extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
               if ((request.getParameter("clave").isEmpty())||(request.getParameter("sesion").isEmpty())){
-                                      
-                    
                     response.sendRedirect("Sesion.jsp");
-               }
-              else if(request.getParameter("sesion")!=null){
+               }else if(request.getParameter("sesion")!=null){
                String sesion=request.getParameter("sesion");
                String clave=request.getParameter("clave");
                Sesion ses=new Sesion();

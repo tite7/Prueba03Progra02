@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Navbar Template for Bootstrap</title>
+    <title>Inicio Sesion</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Templates/css/Bootstrap.min.css" rel="stylesheet">
@@ -50,9 +50,9 @@
       <!-- Main component for a primary marketing message or call to action -->
       <div>
           <br>
-          <a>Inicie Sesion por favor.</a>
+          <h3>Inicie Sesion por favor</h3>
           <br>
-          <form method="post" action="ServletSesion">
+          <form method="post" action="../ServletSesion">
             Username:<input type="text" name="sesion" >
             Password:<input type="password" name="clave" ><input type="submit" value="Login">
         </form>
@@ -81,12 +81,10 @@
                        con.setConsulta("select Sesiones.sesion_id, Sesiones.sesion, Sesion.clave from Sesiones");
                        while(con.getResultado().next()){
                         out.println("<tr>");
-                        
-                        
                            out.println("<td>"+con.getResultado().getString("sesion_id")+"</td>");
                            out.println("<td>"+con.getResultado().getString("sesion")+"</td>");
                            out.println("<td>"+con.getResultado().getString("clave")+"</td>");
-                           out.println("</tr>");
+                        out.println("</tr>");
                        
                            
                        }
@@ -109,5 +107,5 @@
     <script src="../Templates/js/Bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+    
 </html>

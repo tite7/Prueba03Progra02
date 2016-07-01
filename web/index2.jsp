@@ -53,6 +53,8 @@
               <li><a href="Albumes/Albumes.jsp">Albumes</a></li>
               <li><a href="Autores/Autores.jsp">Autores</a></li>
               <li><a href="Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
+              <li><a href="Paises/Paises.jsp">Paises</a></li>
+              <li><a href="Ciudades.jsp">Ciudades</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
             <li><a href="index.jsp">Cerrar Sesion</a></li>

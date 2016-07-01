@@ -37,9 +37,7 @@
 
       <form action="ServletUsuario1" method="POST" class="form-signin">
         <h2 class="form-signin-heading">Por favor ingrese...</h2>
-
         <input type="text" name="usuario" class="form-control" placeholder="Usuario">
-
         <input type="password" name="clave" class="form-control" placeholder="Clave" required>
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit" value="enviar">Entrar</button>
