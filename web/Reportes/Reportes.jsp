@@ -1,3 +1,9 @@
+<%-- 
+    Document   : Reportes
+    Created on : 28-jun-2016, 22:15:05
+    Author     : Toshiba
+--%>
+
 <%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +16,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Tabla Nacionalidades</title>
+    <title>Reportes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../Templates/css/Bootstrap.min.css" rel="stylesheet">
@@ -51,8 +57,8 @@
               <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
               <li><a href="../Albumes/Albumes.jsp">Albumes</a></li>
               <li><a href="../Autores/Autores.jsp">Autores</a></li>
-              <li class="active"><a href="Nacionalidades.jsp">Nacionalidades</a></li>
-              <li><a href="../Reportes/Reportes.jsp">Reportes</a></li>
+              <li><a href="../Nacionalidades.jsp">Nacionalidades</a></li>
+              <li class="active"><a href="Reportes.jsp">Reportes</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
             <li><a href="../Sesion.jsp">Cerrar Sesion</a></li>
@@ -63,20 +69,12 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div>
-          <br>
-        <a href="guardar.jsp" class="btn btn-primary">AGREGAR NACIONALIDAD</a>
-        <br>
-        <br>
-        <form method="post" action="Nacionalidades.jsp">
-            Buscar por Nombre:<input type="text" name="buscar" ><input type="submit" value="Buscar">
-        </form>
+      
         <br>
           <table class="table table-striped">
                 <thead>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>ESTADO</th>
-                <th>ACCIONES</th>
+                <th>TABLAS</th>
+                <th>REPORTES</th>
                 </thead>
                 <tbody>
                     <%
