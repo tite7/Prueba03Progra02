@@ -57,7 +57,9 @@
               <li><a href="../Usuarios/Usuarios.jsp">Tabla Usuarios</a></li>
               <li><a href="../Albumes/Albumes.jsp">Albumes</a></li>
               <li><a href="../Autores/Autores.jsp">Autores</a></li>
-              <li><a href="../Nacionalidades.jsp">Nacionalidades</a></li>
+              <li><a href="../Nacionalidades/Nacionalidades.jsp">Nacionalidades</a></li>
+              <li><a href="../Paises/Paises.jsp">Paises</a></li>
+              <li><a href="../Ciudades/Ciudades.jsp">Ciudades</a></li>
               <li class="active"><a href="Reportes.jsp">Reportes</a></li>
             </ul>
               <ul class="nav navbar-nav navbar-right">
@@ -77,31 +79,8 @@
                 <th>REPORTES</th>
                 </thead>
                 <tbody>
-                    <%
-                Conexion con = new Conexion();
-                if (request.getParameter("buscar") != null) {
-                    if (request.getParameter("buscar").isEmpty()) {
-                        con.setConsulta("select * from Nacionalidades where estado='activo'");
-                    } else {
-                        String nombre = request.getParameter("buscar");
-                        con.setConsulta("select * from Nacionalidades where nombre like '%"+nombre+"%' and estado='activo'");
-                    }
-                }else{
-                    con.setConsulta("select * from Nacionalidades where estado='activo'");
-                }
-            %>
-                    <%
-                       con.setConsulta("select * from Nacionalidades where Autores.autores_id=Autores.Nacionalidad_id and estado='activo'");
-                       while(con.getResultado().next()){
-                        out.println("<tr>");
-                           out.println("<td>"+con.getResultado().getString("nacionalidad_id")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("nombre")+"</td>");
-                           out.println("<td>"+con.getResultado().getString("estado")+"</td>");
-                           out.println("<td>"+"<a href='editar.jsp?editar="+con.getResultado().getString("nacionalidad_id")+"' class='btn btn-success'>EDITAR</a>"+"</td>");
-                           out.println("<td>"+"<a href='../ServletNacionalidad?eliminar="+con.getResultado().getString("nacionalidad_id")+"' class='btn btn-danger'>ELIMINAR</a>"+"</td>");
-                        out.println("</tr>");
-                       }
-                    %>
+                
+                    
                 </tbody>
             </table>
           
