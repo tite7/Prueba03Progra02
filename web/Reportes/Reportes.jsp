@@ -79,8 +79,30 @@
                 <th>REPORTES</th>
                 </thead>
                 <tbody>
-                
-                    
+                    <tr>
+                        <td>Tabla Usuarios</td>
+                        <td><input type="submit" class="btn btn-success" value="Reporte Usuarios"></td>
+                    </tr>
+                    <tr>
+                        <td>Tabla Albumes</td>
+                        <td><input type="submit" class="btn btn-success" value="Reporte Albumes"></td>
+                    </tr>
+                    <tr>
+                        <td>Tabla Autores</td>
+                        <td><input type="submit" class="btn btn-success" value="Reporte Autores"></td>
+                    </tr>
+                    <tr>
+                        <td>Tabla Nacionalidades</td>
+                        <td><input type="submit" class="btn btn-success" value="Reporte Nacionalidades"></td>
+                    </tr>
+                    <tr>
+                        <td>Tabla Paises</td>
+                        <td><input type="submit" class="btn btn-success" value="Reporte Paises"></td>
+                    </tr>
+                    <tr>
+                        <td>Tabla Ciudades</td>
+                        <td><input type="submit" class="btn btn-success" value="Reporte Ciudades"></td>
+                    </tr>
                 </tbody>
             </table>
           
