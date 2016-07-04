@@ -6,16 +6,21 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 public class Conexion {
     Connection con = null;
     Statement stmt = null;
     ResultSet rs = null;
+    private static Conexion micon;
+
     public Conexion() {
+
         String driver = "com.mysql.jdbc.Driver";
         String user = "root";
         String pass = "";
-        String url = "jdbc:mysql:3306//localhost/prueba03";
+        String url = "jdbc:mysql://localhost:3306/prueba03";
         try {
+            DriverManager.registerDriver(new org.gjt.mm.mysql.Driver());
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, pass);
 
@@ -23,10 +28,13 @@ public class Conexion {
             System.out.println("Error de conexion!!" + ex.getMessage());
         }
     }
-    
-    public Connection getConexion(){
-        return con;
+    public static synchronized Conexion getInstance(){
+        if(micon==null){
+            micon=new Conexion();
+        }
+        return micon;
     }
+    
     public void setConsulta(String sql) {
         try {
             stmt = con.createStatement();
@@ -36,6 +44,7 @@ public class Conexion {
      
         }
     }
+    
     public ResultSet getResultado(){
         return rs;
     }
@@ -48,5 +57,7 @@ public class Conexion {
         }
       
     }
-
+    public Connection getConexion(){
+        return con;
+    }
 }

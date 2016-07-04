@@ -4,9 +4,11 @@
     Author     : Mio
 --%>
 
-<%@page import="net.sf.jasperreports.engine.*"%>
-<%@page import="java.io.File"%>
-<%@page import="AccesoDato.Conexion"%>
+<%@page import="net.sf.jasperreports.engine.*" %>
+<%@page import="java.util.*" %>
+<%@page import="java.io.*" %>
+<%@page import="java.sql.*" %>
+<%@page import="AccesoDato.Conexion" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +18,7 @@
     </head>
     <body>
         <%  try{
-            Conexion con=new Conexion();
+            Conexion con=Conexion.getInstance();
             File reportFile=new File(application.getRealPath("//Reportes//ListarNacionalidades.jasper"));
           byte[] bytes=JasperRunManager.runReportToPdf(reportFile.getPath(), null, con.getConexion());
           response.setContentType("application/pdf");
