@@ -95,7 +95,7 @@
                     </tr>
                     <tr>
                         <td>Tabla Nacionalidades</td>
-                        <td><input type="submit" class="btn btn-success" value="Reporte Nacionalidades"></td>
+                        <td><a href="../Nacionalidades/ReporteNacionalidades.jsp"><input type="submit" class="btn btn-success" value="Reporte Nacionalidades"></a></td>
                     </tr>
                     <tr>
                         <td>Tabla Paises</td>
@@ -109,7 +109,7 @@
             </table>
         
         <br><br>
-        <a href="../Nacionalidades/ReporteNacionalidades.jsp">Reporte Nacionalidades</a>
+        
       </div>
 
     </div> <!-- /container -->
