@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ReporteNacionalidades
-    Created on : 03-jul-2016, 23:17:00
+    Document   : ReporteCiudades
+    Created on : 04-jul-2016, 18:53:56
     Author     : Mio
 --%>
 
@@ -14,12 +14,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Rrpoerte Nacionalidades</title>
+        <title>Reporte Ciudades</title>
     </head>
     <body>
         <%  try{
             Conexion con=Conexion.getInstance();
-            File reportFile=new File(application.getRealPath("//Reportes//ListarNacionalidades.jasper"));
+            File reportFile=new File(application.getRealPath("//Reportes//ListarCiudades.jasper"));
           byte[] bytes=JasperRunManager.runReportToPdf(reportFile.getPath(), null, con.getConexion());
           response.setContentType("application/pdf");
           response.setContentLength(bytes.length);

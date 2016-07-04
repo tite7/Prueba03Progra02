@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListarAutores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d8e36703-d9bc-489c-8c58-edeb6fa065f6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from Autores;]]>
+	</queryString>
+	<field name="autor_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apepat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apemat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_nacimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nacionalidad_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupHeader>
+			<band height="4"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupHeader>
+			<band height="3"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="30819a11-d9c5-4c34-9125-cf7212eff431"/>
+				<staticText>
+					<reportElement x="186" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="f8cf0f6f-bbff-49a4-934f-5b9e5d200300"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Autores]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="5"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28">
+			<line>
+				<reportElement x="-20" y="27" width="595" height="1" forecolor="#666666" uuid="f97070d8-82e8-4a6c-86a0-98cec18fcd2b"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="75" height="20" uuid="266c32c5-4b7b-4cbf-89ad-353e10d3dafa"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="75" height="20" uuid="5e37bc64-02aa-4dbe-995f-8e975dad6fd6"/>
+				<text><![CDATA[APE. PATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="0" width="75" height="20" uuid="d4027df1-e1cf-4c0e-b3ba-85cc84e8240d"/>
+				<text><![CDATA[AP. MATERNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="20" uuid="13a3dff5-98da-435a-ab8b-e815bc5f0e64"/>
+				<text><![CDATA[FECHA NACIEMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="0" width="75" height="20" uuid="7aec05e2-6b40-4e99-9bfb-aa75ce619af2"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="80" height="20" uuid="36caae75-c986-43bc-b4b6-0479e3980d2d"/>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="75" height="20" uuid="1bc1e9dd-6571-442d-8702-7f92d420dafe"/>
+				<text><![CDATA[NACIONALIDAD ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31">
+			<textField>
+				<reportElement x="0" y="0" width="75" height="20" uuid="f4df5bf4-d65a-4480-938e-a908eb8e26d8"/>
+				<textFieldExpression><![CDATA[$F{autor_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="75" height="20" uuid="eb550cb9-562e-4ffa-8137-c8c96c8db0db"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="75" height="20" uuid="fc9da42e-59f3-4802-b759-068f70afed8f"/>
+				<textFieldExpression><![CDATA[$F{apepat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="0" width="75" height="20" uuid="3b686692-d6ae-4934-9528-eac2dc941f95"/>
+				<textFieldExpression><![CDATA[$F{apemat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="07009aef-bd05-4ce6-9c9c-1d8767f340c7"/>
+				<textFieldExpression><![CDATA[$F{fecha_nacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="20" uuid="ec8942cf-b925-41ac-9633-dd51d156fb2c"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="75" height="20" uuid="abe68e62-818f-4fe6-b8a7-4fe8a521fb3e"/>
+				<textFieldExpression><![CDATA[$F{nacionalidad_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="1c7cecbd-7aa1-4808-8ba7-53ca1f1ef2a6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="13b390a5-0b9d-405b-bd1b-cc8426a89c49"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="727dc917-069e-4c37-bad0-e14e22799a00"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

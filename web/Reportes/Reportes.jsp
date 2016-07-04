@@ -82,16 +82,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tabla Usuarios</td>
-                        <td><input type="submit" class="btn btn-success" value="Reporte Usuarios"></td>
-                    </tr>
-                    <tr>
                         <td>Tabla Albumes</td>
-                        <td><input type="submit" class="btn btn-success" value="Reporte Albumes"></td>
+                        <td><a href="../Albumes/ReporteAlbumes.jsp"><input type="submit" class="btn btn-success" value="Reporte Albumes"></a></td>
                     </tr>
                     <tr>
                         <td>Tabla Autores</td>
-                        <td><input type="submit" class="btn btn-success" value="Reporte Autores"></td>
+                        <td><a href="../Autores/ReporteAutores.jsp"><input type="submit" class="btn btn-success" value="Reporte Autores"></a></td>
                     </tr>
                     <tr>
                         <td>Tabla Nacionalidades</td>
@@ -99,11 +95,11 @@
                     </tr>
                     <tr>
                         <td>Tabla Paises</td>
-                        <td><input type="submit" class="btn btn-success" value="Reporte Paises"></td>
+                        <td><a href="../Paises/ReportePaises.jsp"><input type="submit" class="btn btn-success" value="Reporte Paises"></a></td>
                     </tr>
                     <tr>
                         <td>Tabla Ciudades</td>
-                        <td><input type="submit" class="btn btn-success" value="Reporte Ciudades"></td>
+                        <td><a href="../Ciudades/ReporteCiudades.jsp"><input type="submit" class="btn btn-success" value="Reporte Ciudades"></a></td>
                     </tr>
                 </tbody>
             </table>
