@@ -4,6 +4,8 @@
     Author     : Toshiba
 --%>
 
+<%@page import="net.sf.jasperreports.engine.*"%>
+<%@page import="java.io.File"%>
 <%@page import="AccesoDato.Conexion"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,8 +107,9 @@
                     </tr>
                 </tbody>
             </table>
-          
-          
+        
+        <br><br>
+        <a href="../Nacionalidades/ReporteNacionalidades.jsp">Reporte Nacionalidades</a>
       </div>
 
     </div> <!-- /container -->

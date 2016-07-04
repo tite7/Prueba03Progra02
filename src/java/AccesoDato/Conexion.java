@@ -6,19 +6,15 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 public class Conexion {
-
     Connection con = null;
     Statement stmt = null;
     ResultSet rs = null;
-
     public Conexion() {
-
         String driver = "com.mysql.jdbc.Driver";
         String user = "root";
         String pass = "";
-        String url = "jdbc:mysql://localhost:3306/prueba03";
+        String url = "jdbc:mysql:3306//localhost/prueba03";
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, pass);
@@ -27,7 +23,10 @@ public class Conexion {
             System.out.println("Error de conexion!!" + ex.getMessage());
         }
     }
-    //select * from ciudad
+    
+    public Connection getConexion(){
+        return con;
+    }
     public void setConsulta(String sql) {
         try {
             stmt = con.createStatement();
@@ -37,7 +36,6 @@ public class Conexion {
      
         }
     }
-    //devolver el listado de ciudades
     public ResultSet getResultado(){
         return rs;
     }
