@@ -20,6 +20,10 @@
         <servlet-name>ServletSesion</servlet-name>
         <servlet-class>Servlet.ServletSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletPais</servlet-name>
+        <servlet-class>Servlet.ServletPais</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletUsuario</servlet-name>
         <url-pattern>/ServletUsuario</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ServletSesion</servlet-name>
         <url-pattern>/ServletSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletPais</servlet-name>
+        <url-pattern>/ServletPais</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
